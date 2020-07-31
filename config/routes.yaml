@@ -1,0 +1,71 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+createleague:
+    path: /leagues
+    controller: App\Controller\FootballLeagueController::create
+    methods:  [POST]
+
+updateleague:
+    path: /leagues/{id}
+    controller: App\Controller\FootballLeagueController::update
+    methods:  [PUT]
+
+leaguedetail:
+    path: /leagues/{id}
+    controller: App\Controller\FootballLeagueController::list
+    methods:  [GET]
+
+deleteleague:
+    path: /leagues/{id}
+    controller: App\Controller\FootballLeagueController::delete
+    methods:  [DELETE]
+
+leaguelist:
+    path: /leagues
+    controller: App\Controller\FootballLeagueController::list
+    methods:  [GET]
+
+createteam:
+    path: /{leaguesid}/teams
+    controller: App\Controller\FootballTeamController::create
+    methods:  [POST]
+
+updateteam:
+    path: /{leaguesid}/teams/{id}
+    controller: App\Controller\FootballTeamController::update
+    methods:  [PUT]
+
+deleteteam:
+    path: /teams/{id}
+    controller: App\Controller\FootballTeamController::delete
+    methods:  [DELETE]
+
+teamlist:
+    path: /{leaguesid}/teams
+    controller: App\Controller\FootballTeamController::list
+    methods:  [GET]
+
+api:
+    path: /api
+    controller: App\Controller\AuthController::api
+
+login_check:
+    path:     /api/login_check
+    methods:  [POST]
+
+register:
+    path:     /api/register
+    methods:  [POST]
+    controller: App\Controller\AuthController::create
+
+teamdetail:
+    path: /{leaguesid}/teams/{id}
+    controller: App\Controller\FootballTeamController::list
+    methods:  [GET]
+
+userlist:
+    path: /users
+    controller: App\Controller\AuthController::list
+    methods:  [GET]
